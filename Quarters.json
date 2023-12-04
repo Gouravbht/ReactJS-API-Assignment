@@ -1,0 +1,41 @@
+{
+  "Quartile-1": [
+    {
+      "Financial Quarter": "Quarter 1 (Dec 22)",
+      "Revenue (INR)": "716.57 B",
+      "Net Income (INR)": "154.77 B",
+      "Net Profit": "21.60%",
+      "Operating Income (INR)": "213.55 B"
+    }
+  ],
+
+  "Quartile-2": [
+    {
+      "Financial Quarter": "Quarter 2 (Dec 22)",
+      "Revenue (INR)": "716.57 B",
+      "Net Income (INR)": "154.77 B",
+      "Net Profit": "21.60%",
+      "Operating Income (INR)": "213.55 B"
+    }
+  ],
+
+  "Quartile-3": [
+    {
+      "Financial Quarter": "Quarter 3 (Dec 22)",
+      "Revenue (INR)": "716.57 B",
+      "Net Income (INR)": "154.77 B",
+      "Net Profit": "21.60%",
+      "Operating Income (INR)": "213.55 B"
+    }
+  ],
+
+  "Quartile-4": [
+    {
+      "Financial Quarter": "Quarter 4 (Dec 22)",
+      "Revenue (INR)": "716.57 B",
+      "Net Income (INR)": "154.77 B",
+      "Net Profit": "21.60%",
+      "Operating Income (INR)": "213.55 B"
+    }
+  ]
+}
