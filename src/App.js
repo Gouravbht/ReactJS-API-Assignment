@@ -1,5 +1,4 @@
 import Herosection from "./Herosection";
-import "./App.css";
 
 function App() {
   return (

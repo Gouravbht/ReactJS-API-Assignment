@@ -26,58 +26,71 @@ const Herosection = () => {
   }, [selectedQuarter]);
 
   return (
-    <div className="py-2 bg-black h-full">
-      <header className="text-left text-teal-500 text-3xl font-medium p-5 px-8">
-        SBI
-      </header>
-      <div className="py-5 md:py-10 w-full h-full flex md:justify-center">
-        <p className="py-5 p-7 md:p-5 md:py-20 w-[80%] md:w-[80%] text-white text-5xl md:text-7xl font-semibold md:font-bold">
-          Let's look at the financial quarters results of our{" "}
-          <span className="text-teal-500">organisation</span>
-        </p>
-      </div>
-      <div className="flex justify-center">
-        <select
-          className="p-3 w-[350px] font-medium md:w-[450px] rounded-md mt-5 bg-teal-600 text-white"
-          value={selectedQuarter}
-          onChange={handleQuarterChange}
-        >
-          <option value="Quartile-1">Quartile 1</option>
-          <option value="Quartile-2">Quartile 2</option>
-          <option value="Quartile-3">Quartile 3</option>
-          <option value="Quartile-4">Quartile 4</option>
-        </select>
-      </div>
-      <div className="flex flex-wrap justify-center gap-12 py-20 m-7 h-full">
-        {quarterData.map((quarter, index) => (
-          <div
-            key={index}
-            className={`bg-teal-900 w-[600px] h-[550px] rounded-md ${
-              selectedQuarter === `Quartile-${index + 1}` ? "" : "hidden"
-            }`}
+    <>
+      <div className=" h-60 w-24 md:w-60 absolute top-24 md:top-48 left-52 rounded-full blur-3xl bg-blue-500 opacity-90 "></div>
+      <div className="h-60 w-60 absolute top-96 right-52 rounded-full blur-3xl bg-blue-500 opacity-90 "></div>
+      <section className="h-screen py-6 flex bg-black flex-col items-center p-4 md:p-10">
+        <header className="flex flex-col ">
+          <h1 className="text-center text-lg md:text-4xl font-semibold text-blue-600">
+            State Bank Of India
+          </h1>
+          <span className="text-md md:text-xl md:font-medium text-center text-gray-300">
+            Financial Quarter Information
+          </span>
+        </header>
+        {/* Dropdown Component */}
+        <div className="mt-4 py-4 md:mt-10">
+          <label
+            htmlFor="quarter-dropdown"
+            className="md:font-medium text-sm md:text-lg text-gray-400"
           >
-            <h1 className="text-white text-4xl p-5 mb-4 font-medium">{`Quartile-${
-              index + 1
-            }`}</h1>
-            <p className="p-3 text-xl font-medium">
-              Financial Quarter: {quarter["Financial Quarter"]}
-            </p>
-            <p className="p-3 text-xl font-medium">
-              Revenue (INR): {quarter["Revenue (INR)"]}
-            </p>
-            <p className="p-3 text-xl font-medium">
-              Net Income (INR): {quarter["Net Income (INR)"]}
-            </p>
-            <p className="p-3 text-xl font-medium">
-              Net Profit: {quarter["Net Profit"]}
-            </p>
-            <p className="p-3 text-xl font-medium">
-              Operating Income (INR): {quarter["Operating Income (INR)"]}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+            Select Quarter
+          </label>
+          <br />
+          <select
+            name="quarter-dropdown"
+            className="p-2 md:p-3 font-medium w-[300px] md:w-[320px] rounded-lg bg-blue-400 border-2 border-blue-400 mt-1"
+            value={selectedQuarter}
+            onChange={handleQuarterChange}
+          >
+            <option value="Quartile-1">Quartile 1</option>
+            <option value="Quartile-2">Quartile 2</option>
+            <option value="Quartile-3">Quartile 3</option>
+            <option value="Quartile-4">Quartile 4</option>
+          </select>
+        </div>
+
+        {/* Rendering Data */}
+        <div className="p-1 py-9 w-fit md:p-10 z-50 overflow-x-auto">
+          <table className="table py-3 bg-black backdrop-blur-sm opacity-50 rounded-lg border border-blue-400 border-separate">
+            {quarterData.map((quarter, index) => (
+              <tbody key={index}>
+                <tr>
+                  <th
+                    colSpan={4}
+                    className=" p-3 text-lg md:text-4xl font-semibold text-center text-blue-400 border-b border-blue-400"
+                  >
+                    {quarter["Financial Quarter"]}
+                  </th>
+                </tr>
+                <tr className=" font-semibold text-white text-xs md:text-2xl">
+                  <td className=" p-3">Revenue (INR)</td>
+                  <td className=" p-3">Net Income (INR)</td>
+                  <td className=" p-3">Net Profit</td>
+                  <td className=" p-3">Operating Income (INR)</td>
+                </tr>
+                <tr className="text-xs font-medium text-white md:text-2xl">
+                  <td className=" p-3">{quarter["Revenue (INR)"]}</td>
+                  <td className=" p-3">{quarter["Net Income (INR)"]}</td>
+                  <td className=" p-3">{quarter["Net Profit"]}</td>
+                  <td className=" p-3">{quarter["Operating Income (INR)"]}</td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
+      </section>
+    </>
   );
 };
 
