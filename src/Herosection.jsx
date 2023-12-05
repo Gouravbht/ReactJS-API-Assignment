@@ -13,7 +13,7 @@ const Herosection = () => {
   useEffect(() => {
     const fetchQuarterData = async () => {
       try {
-        const response = await axios.get(`/netlify/functions/getQuarterData`);
+        const response = await axios.get(`/.netlify/functions/getQuarterData`);
         setQuarterData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
