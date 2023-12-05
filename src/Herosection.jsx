@@ -14,7 +14,7 @@ const Herosection = () => {
     const fetchQuarterData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/${selectedQuarter.toLowerCase()}`
+          `https://sbiquarterinfo.netlify.app/${selectedQuarter.toLowerCase()}`
         );
         setQuarterData(response.data);
       } catch (error) {
@@ -80,8 +80,8 @@ const Herosection = () => {
                   <td className=" p-3">Operating Income (INR)</td>
                 </tr>
                 <tr className="text-xs font-medium text-white md:text-2xl">
-                  <td className=" p-3">{quarter["Revenue (INR)"]}</td>
-                  <td className=" p-3">{quarter["Net Income (INR)"]}</td>
+                  <td className=" p-2">{quarter["Revenue (INR)"]}</td>
+                  <td className=" p-2">{quarter["Net Income (INR)"]}</td>
                   <td className=" p-3">{quarter["Net Profit"]}</td>
                   <td className=" p-3">{quarter["Operating Income (INR)"]}</td>
                 </tr>
