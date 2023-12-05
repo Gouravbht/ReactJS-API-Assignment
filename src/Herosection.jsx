@@ -13,7 +13,9 @@ const Herosection = () => {
   useEffect(() => {
     const fetchQuarterData = async () => {
       try {
-        const response = await axios.get(`/.netlify/functions/getQuarterData`);
+        const response = await axios.get(
+          `http://localhost:8000/${selectedQuarter.toLowerCase()}`
+        );
         setQuarterData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -71,7 +73,7 @@ const Herosection = () => {
                     {quarter["Financial Quarter"]}
                   </th>
                 </tr>
-                <tr className=" font-semibold text-white text-xs md:text-2xl">
+                <tr className=" font-semibold text-white text-xs md:text-xl">
                   <td className=" p-3">Revenue (INR)</td>
                   <td className=" p-3">Net Income (INR)</td>
                   <td className=" p-3">Net Profit</td>
