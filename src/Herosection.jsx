@@ -14,7 +14,7 @@ const Herosection = () => {
     const fetchQuarterData = async () => {
       try {
         const response = await axios.get(
-          `https://sbiquarterinfo.netlify.app/${selectedQuarter.toLowerCase()}`
+          `/api/${selectedQuarter.toLowerCase()}`
         );
         setQuarterData(response.data);
       } catch (error) {
